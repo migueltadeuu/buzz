@@ -7,17 +7,17 @@ import { Newest } from "@/Utils/Login";
 
 export function rootTabItems(base: string, pubKey: string | undefined, tags: Newest<Array<string>>) {
   const menuItems = [
-    {
-      tab: "for-you",
-      path: `${base}/for-you`,
-      show: Boolean(pubKey),
-      element: (
-        <>
-          <Icon name="user-v2" />
-          <FormattedMessage defaultMessage="For you" id="xEjBS7" />
-        </>
-      ),
-    },
+    // {
+    //   tab: "for-you",
+    //   path: `${base}/for-you`,
+    //   show: Boolean(pubKey),
+    //   element: (
+    //     <>
+    //       <Icon name="user-v2" />
+    //       <FormattedMessage defaultMessage="For you" id="xEjBS7" />
+    //     </>
+    //   ),
+    // },
     {
       tab: "following",
       path: `${base}/following`,
@@ -40,61 +40,61 @@ export function rootTabItems(base: string, pubKey: string | undefined, tags: New
         </>
       ),
     },
-    {
-      tab: "conversations",
-      path: `${base}/conversations`,
-      show: Boolean(pubKey),
-      element: (
-        <>
-          <Icon name="message-chat-circle" />
-          <FormattedMessage defaultMessage="Conversations" id="1udzha" />
-        </>
-      ),
-    },
-    {
-      tab: "followed-by-friends",
-      path: `${base}/followed-by-friends`,
-      show: Boolean(pubKey),
-      element: (
-        <>
-          <Icon name="user-v2" />
-          <FormattedMessage defaultMessage="Followed by friends" id="voxBKC" />
-        </>
-      ),
-    },
-    {
-      tab: "suggested",
-      path: `${base}/suggested`,
-      show: Boolean(pubKey),
-      element: (
-        <>
-          <Icon name="thumbs-up" />
-          <FormattedMessage defaultMessage="Suggested Follows" id="C8HhVE" />
-        </>
-      ),
-    },
-    {
-      tab: "trending/hashtags",
-      path: `${base}/trending/hashtags`,
-      show: true,
-      element: (
-        <>
-          <Icon name="hash" />
-          <FormattedMessage defaultMessage="Trending Hashtags" id="XXm7jJ" />
-        </>
-      ),
-    },
-    {
-      tab: "global",
-      path: `${base}/global`,
-      show: true,
-      element: (
-        <>
-          <Icon name="globe" />
-          <FormattedMessage defaultMessage="Global" id="EWyQH5" />
-        </>
-      ),
-    },
+    // {
+    //   tab: "conversations",
+    //   path: `${base}/conversations`,
+    //   show: Boolean(pubKey),
+    //   element: (
+    //     <>
+    //       <Icon name="message-chat-circle" />
+    //       <FormattedMessage defaultMessage="Conversations xxxx" id="5EbBGQ" />
+    //     </>
+    //   ),
+    // },
+    // {
+    //   tab: "followed-by-friends",
+    //   path: `${base}/followed-by-friends`,
+    //   show: Boolean(pubKey),
+    //   element: (
+    //     <>
+    //       <Icon name="user-v2" />
+    //       <FormattedMessage defaultMessage="Followed by friends" id="voxBKC" />
+    //     </>
+    //   ),
+    // },
+    // {
+    //   tab: "suggested",
+    //   path: `${base}/suggested`,
+    //   show: Boolean(pubKey),
+    //   element: (
+    //     <>
+    //       <Icon name="thumbs-up" />
+    //       <FormattedMessage defaultMessage="Suggested Follows" id="C8HhVE" />
+    //     </>
+    //   ),
+    // },
+    // {
+    //   tab: "trending/hashtags",
+    //   path: `${base}/trending/hashtags`,
+    //   show: true,
+    //   element: (
+    //     <>
+    //       <Icon name="hash" />
+    //       <FormattedMessage defaultMessage="Trending Hashtags" id="XXm7jJ" />
+    //     </>
+    //   ),
+    // },
+    // {
+    //   tab: "global",
+    //   path: `${base}/global`,
+    //   show: true,
+    //   element: (
+    //     <>
+    //       <Icon name="globe" />
+    //       <FormattedMessage defaultMessage="Global" id="EWyQH5" />
+    //     </>
+    //   ),
+    // },
     {
       tab: "tags",
       path: `${base}/topics`,

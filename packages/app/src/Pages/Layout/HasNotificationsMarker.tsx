@@ -17,8 +17,8 @@ export function HasNotificationsMarker() {
 
   if (hasNotifications) {
     return (
-      <div className="relative">
-        <span className="has-unread absolute top-0 right-0 rounded-full"></span>
+      <div>
+        {/* <span className="has-unread absolute top-0 right-0 rounded-full"></span> */}
       </div>
     );
   }

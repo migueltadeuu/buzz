@@ -5,8 +5,8 @@ import { mapEventToProfile } from "@snort/system";
 import { useUserProfile } from "@snort/system-react";
 import { useEffect, useState } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
-import { useNavigate } from "react-router-dom";
 
+// import { useNavigate } from "react-router-dom";
 import { UserCache } from "@/Cache";
 import AsyncButton from "@/Components/Button/AsyncButton";
 import { ErrorOrOffline } from "@/Components/ErrorOrOffline";
@@ -25,7 +25,7 @@ export interface ProfileSettingsProps {
 }
 
 export default function ProfileSettings(props: ProfileSettingsProps) {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const { formatMessage } = useIntl();
   const { publicKey: id, readonly } = useLogin(s => ({ publicKey: s.publicKey, readonly: s.readonly }));
   const user = useUserProfile(id ?? "");
@@ -40,14 +40,14 @@ export default function ProfileSettings(props: ProfileSettingsProps) {
   const [website, setWebsite] = useState<string>();
   const [nip05, setNip05] = useState<string>();
   const [lud16, setLud16] = useState<string>();
-  const [nip05AddressValid, setNip05AddressValid] = useState<boolean>();
-  const [invalidNip05AddressMessage, setInvalidNip05AddressMessage] = useState<string>();
+  const [setNip05AddressValid] = useState<boolean>(); // removed "nip05AddressValid," before "setNip05AddressValid"
+  const [setInvalidNip05AddressMessage] = useState<string>(); // removed "invalidNip05AddressMessage," before setInvalidNip05AddressMessage
   const [usernameValid, setUsernameValid] = useState<boolean>();
   const [invalidUsernameMessage, setInvalidUsernameMessage] = useState<string>();
   const [aboutValid, setAboutValid] = useState<boolean>();
   const [invalidAboutMessage, setInvalidAboutMessage] = useState<string>();
-  const [lud16Valid, setLud16Valid] = useState<boolean>();
-  const [invalidLud16Message, setInvalidLud16Message] = useState<string>();
+  const [setLud16Valid] = useState<boolean>(); //removed "lud16Valid," before "setLud16Valid"
+  const [setInvalidLud16Message] = useState<string>(); // removed "invalidLud16Message, " before "setInvalidLud16Message"
 
   useEffect(() => {
     if (user) {
@@ -159,10 +159,10 @@ export default function ProfileSettings(props: ProfileSettingsProps) {
     }
   }
 
-  async function onNip05Change(e: React.ChangeEvent<HTMLInputElement>) {
-    const Nip05Address = e.target.value.toLowerCase();
-    setNip05(Nip05Address);
-  }
+  // async function onNip05Change(e: React.ChangeEvent<HTMLInputElement>) {
+  //   const Nip05Address = e.target.value.toLowerCase();
+  //   setNip05(Nip05Address);
+  // }
 
   async function onLimitCheck(val: string, field: string) {
     if (field === "username") {
@@ -215,9 +215,9 @@ export default function ProfileSettings(props: ProfileSettingsProps) {
     }
   }
 
-  async function onLud16Change(address: string) {
-    setLud16(address);
-  }
+  // async function onLud16Change(address: string) {
+  //   setLud16(address);
+  // }
 
   function editor() {
     return (
@@ -260,7 +260,8 @@ export default function ProfileSettings(props: ProfileSettingsProps) {
             disabled={readonly}
           />
         </div>
-        <div className="flex flex-col w-max g8">
+
+        {/* <div className="flex flex-col w-max g8">
           <h4>
             <FormattedMessage defaultMessage="Nostr Address" id="9pMqYs" />
           </h4>
@@ -298,7 +299,8 @@ export default function ProfileSettings(props: ProfileSettingsProps) {
             disabled={readonly}
           />
           <div>{lud16Valid === false ? <span className="warning">{invalidLud16Message}</span> : <></>}</div>
-        </div>
+        </div> */}
+        
         <AsyncButton className="primary" onClick={() => saveProfile()} disabled={readonly}>
           <FormattedMessage defaultMessage="Save" id="jvo0vs" />
         </AsyncButton>

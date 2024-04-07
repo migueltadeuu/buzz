@@ -11,7 +11,7 @@ import { ProfileLink } from "@/Components/User/ProfileLink";
 import useEventPublisher from "@/Hooks/useEventPublisher";
 import useLogin from "@/Hooks/useLogin";
 import { HasNotificationsMarker } from "@/Pages/Layout/HasNotificationsMarker";
-import { WalletBalance } from "@/Pages/Layout/WalletBalance";
+// import { WalletBalance } from "@/Pages/Layout/WalletBalance";
 import { subscribeToNotifications } from "@/Utils/Notifications";
 
 import { LogoHeader } from "./LogoHeader";
@@ -29,33 +29,33 @@ const MENU_ITEMS = [
     link: "/search",
     nonLoggedIn: true,
   },
-  {
-    label: <FormattedMessage defaultMessage="Notifications" id="NAidKb" />,
-    icon: "bell",
-    link: "/notifications",
-  },
+  // {
+  //   label: <FormattedMessage defaultMessage="Notifications" id="NAidKb" />,
+  //   icon: "bell",
+  //   link: "/notifications",
+  // },
   {
     label: <FormattedMessage defaultMessage="Messages" id="hMzcSq" />,
     icon: "mail",
     link: "/messages",
     hideReadOnly: true,
   },
-  {
-    label: <FormattedMessage defaultMessage="Deck" id="o/gK53" />,
-    icon: "deck",
-    link: "/deck",
-  },
-  {
-    label: <FormattedMessage defaultMessage="Social Graph" id="CzHZoc" />,
-    icon: "graph",
-    link: "/graph",
-  },
-  {
-    label: <FormattedMessage defaultMessage="About" id="g5pX+a" />,
-    icon: "info",
-    link: "/donate",
-    nonLoggedIn: true,
-  },
+  // {
+  //   label: <FormattedMessage defaultMessage="Deck" id="o/gK53" />,
+  //   icon: "deck",
+  //   link: "/deck",
+  // },
+  // {
+  //   label: <FormattedMessage defaultMessage="Social Graph" id="CzHZoc" />,
+  //   icon: "graph",
+  //   link: "/graph",
+  // },
+  // {
+  //   label: <FormattedMessage defaultMessage="About" id="g5pX+a" />,
+  //   icon: "info",
+  //   link: "/donate",
+  //   nonLoggedIn: true,
+  // },
   {
     label: <FormattedMessage defaultMessage="Settings" id="D3idYv" />,
     icon: "settings",
@@ -104,7 +104,7 @@ export default function NavSidebar({ narrow = false }: { narrow?: boolean }) {
             { "xl:items-start": !narrow, "xl:gap-2": !narrow },
             "gap-1 flex flex-col items-center text-lg font-bold",
           )}>
-          {!narrow && <WalletBalance />}
+          {/* {!narrow && <WalletBalance />} */}
           {MENU_ITEMS.filter(a => {
             if ((CONFIG.hideFromNavbar ?? []).includes(a.link)) {
               return false;

@@ -20,8 +20,7 @@ export default defineMessages({
   Global: { defaultMessage: "Global", id: "EWyQH5" },
   AutoloadMedia: { defaultMessage: "Automatically load media", id: "xbVgIm" },
   AutoloadMediaHelp: {
-    defaultMessage: "Media in notes will automatically be shown for selected people, otherwise only the link will show",
-    id: "TDR5ge",
+    defaultMessage: "Media in notes will automatically be shown for selected people", id: 'gWavno',
   },
   None: { defaultMessage: "None", id: "450Fty" },
   FollowsOnly: { defaultMessage: "Follows only", id: "odFwjL" },

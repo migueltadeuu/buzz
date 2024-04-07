@@ -4,14 +4,14 @@
   color: var(--highlight);
   font-weight: 400;
   font-size: var(--font-size);
-  display: flex;
+  display: right;
   align-items: center;
   border: none !important;
   box-shadow: none !important;
 }
 
 .back-button svg {
-  margin-right: 0.5em;
+  margin-right: 1.5em;
 }
 
 .back-button:hover:hover,
