@@ -1,18 +1,18 @@
 import "./Preferences.css";
 
-import { FormattedMessage, useIntl } from "react-intl";
+import { FormattedMessage } from "react-intl"; // removed "useIntl" after FormattedMessage
 
 import { AllLanguageCodes } from "@/Components/IntlProvider/IntlProviderUtils";
 import { useLocale } from "@/Components/IntlProvider/useLocale";
 import useLogin from "@/Hooks/useLogin";
-import { unwrap } from "@/Utils";
-import { DefaultImgProxy } from "@/Utils/Const";
+// import { unwrap } from "@/Utils";
+// import { DefaultImgProxy } from "@/Utils/Const";
 import { updatePreferences, UserPreferences } from "@/Utils/Login";
 
 import messages from "./messages";
 
 const PreferencesPage = () => {
-  const { formatMessage } = useIntl();
+  // const { formatMessage } = useIntl();
   const { id, pref } = useLogin(s => ({ id: s.id, pref: s.appData.item.preferences }));
   const { lang } = useLocale();
 
@@ -59,9 +59,6 @@ const PreferencesPage = () => {
                 theme: e.target.value,
               } as UserPreferences)
             }>
-            <option value="system">
-              <FormattedMessage {...messages.System} />
-            </option>
             <option value="light">
               <FormattedMessage {...messages.Light} />
             </option>
@@ -71,7 +68,7 @@ const PreferencesPage = () => {
           </select>
         </div>
       </div>
-      <div className="flex justify-between w-max">
+      {/* <div className="flex justify-between w-max">
         <h4>
           <FormattedMessage {...messages.DefaultRootTab} />
         </h4>
@@ -115,7 +112,7 @@ const PreferencesPage = () => {
             onChange={e => updatePreferences(id, { ...pref, telemetry: e.target.checked })}
           />
         </div>
-      </div>
+      </div> */}
       <div className="flex w-max">
         <div className="flex flex-col g8">
           <h4>
@@ -147,7 +144,8 @@ const PreferencesPage = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-between w-max">
+
+      {/* <div className="flex justify-between w-max">
         <div className="flex flex-col g8">
           <h4>
             <FormattedMessage defaultMessage="Check Signatures" id="1o2BgB" />
@@ -180,8 +178,8 @@ const PreferencesPage = () => {
             onChange={e => updatePreferences(id, { ...pref, autoTranslate: e.target.checked })}
           />
         </div>
-      </div>
-      <div className="flex justify-between w-max">
+      </div> */}
+      {/* <div className="flex justify-between w-max">
         <div className="flex flex-col g8">
           <h4>
             <FormattedMessage defaultMessage="Proof of Work" id="grQ+mI" />
@@ -365,8 +363,8 @@ const PreferencesPage = () => {
             </div>
           </div>
         )}
-      </div>
-      <div className="flex justify-between w-max">
+      </div> */}
+      {/* <div className="flex justify-between w-max">
         <div className="flex flex-col g8">
           <h4>
             <FormattedMessage {...messages.EnableReactions} />
@@ -435,8 +433,8 @@ const PreferencesPage = () => {
             onChange={e => updatePreferences(id, { ...pref, autoShowLatest: e.target.checked })}
           />
         </div>
-      </div>
-      <div className="flex flex-col g8">
+      </div> */}
+      {/* <div className="flex flex-col g8">
         <h4>
           <FormattedMessage {...messages.FileUpload} />
         </h4>
@@ -493,7 +491,7 @@ const PreferencesPage = () => {
             onChange={e => updatePreferences(id, { ...pref, hideMutedNotes: e.target.checked })}
           />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -1,7 +1,7 @@
 {
-  "appName": "Snort",
-  "appNameCapitalized": "Snort",
-  "appTitle": "Snort - Nostr",
+  "appName": "Buzz",
+  "appNameCapitalized": "Buzz",
+  "appTitle": "Buzz",
   "hostname": "snort.social",
   "nip05Domain": "snort.social",
   "icon": "/nostrich_512.png",

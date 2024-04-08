@@ -41,15 +41,15 @@ const ProfileTabSelectors = {
     ),
     value: ProfileTabType.FOLLOWS,
   },
-  Zaps: {
-    text: (
-      <>
-        <Icon name="zap-solid" size={16} />
-        <FormattedMessage defaultMessage="Zaps" id="OEW7yJ" />
-      </>
-    ),
-    value: ProfileTabType.ZAPS,
-  },
+  // Zaps: {
+  //   text: (
+  //     <>
+  //       <Icon name="zap-solid" size={16} />
+  //       <FormattedMessage defaultMessage="Zaps" id="OEW7yJ" />
+  //     </>
+  //   ),
+  //   value: ProfileTabType.ZAPS,
+  // },
   Muted: {
     text: (
       <>
@@ -68,24 +68,24 @@ const ProfileTabSelectors = {
     ),
     value: ProfileTabType.BLOCKED,
   },
-  Relays: {
-    text: (
-      <>
-        <Icon name="wifi" size={16} />
-        <FormattedMessage defaultMessage="Relays" id="RoOyAh" />
-      </>
-    ),
-    value: ProfileTabType.RELAYS,
-  },
-  Bookmarks: {
-    text: (
-      <>
-        <Icon name="bookmark-solid" size={16} />
-        <FormattedMessage defaultMessage="Bookmarks" id="nGBrvw" />
-      </>
-    ),
-    value: ProfileTabType.BOOKMARKS,
-  },
+  // Relays: {
+  //   text: (
+  //     <>
+  //       <Icon name="wifi" size={16} />
+  //       <FormattedMessage defaultMessage="Relays" id="RoOyAh" />
+  //     </>
+  //   ),
+  //   value: ProfileTabType.RELAYS,
+  // },
+  // Bookmarks: {
+  //   text: (
+  //     <>
+  //       <Icon name="bookmark-solid" size={16} />
+  //       <FormattedMessage defaultMessage="Bookmarks" id="nGBrvw" />
+  //     </>
+  //   ),
+  //   value: ProfileTabType.BOOKMARKS,
+  // },
 } as { [key: string]: Tab };
 
 export default ProfileTabSelectors;

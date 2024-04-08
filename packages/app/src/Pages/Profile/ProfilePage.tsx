@@ -70,9 +70,9 @@ export default function ProfilePage({ id: propId, state }: ProfilePageProps) {
   // tabs
   const [tab, setTab] = useState<Tab>(ProfileTabSelectors.Notes);
   const optionalTabs = [
-    ProfileTabSelectors.Zaps,
-    ProfileTabSelectors.Relays,
-    ProfileTabSelectors.Bookmarks,
+    // ProfileTabSelectors.Zaps,
+    // ProfileTabSelectors.Relays,
+    // ProfileTabSelectors.Bookmarks,
     ProfileTabSelectors.Muted,
   ].filter(a => unwrap(a)) as Tab[];
   const horizontalScroll = useHorizontalScroll();

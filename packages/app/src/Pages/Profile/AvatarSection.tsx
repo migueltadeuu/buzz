@@ -1,19 +1,19 @@
 import { LNURL } from "@snort/shared";
 import { CachedMetadata, encodeTLVEntries, NostrPrefix, TLVEntryType } from "@snort/system";
-import React, { useMemo, useState } from "react";
+import React, { useState } from "react"; //removed "useMemo, " before "useState"
 import { FormattedMessage, useIntl } from "react-intl";
 import { Link, useNavigate } from "react-router-dom";
 
 import IconButton from "@/Components/Button/IconButton";
-import Copy from "@/Components/Copy/Copy";
-import Modal from "@/Components/Modal/Modal";
-import QrCode from "@/Components/QrCode";
+// import Copy from "@/Components/Copy/Copy";
+// import Modal from "@/Components/Modal/Modal";
+// import QrCode from "@/Components/QrCode";
 import { SpotlightMediaModal } from "@/Components/Spotlight/SpotlightMedia";
 import Avatar from "@/Components/User/Avatar";
 import FollowButton from "@/Components/User/FollowButton";
-import ProfileImage from "@/Components/User/ProfileImage";
+// import ProfileImage from "@/Components/User/ProfileImage";
 import ZapModal from "@/Components/ZapModal/ZapModal";
-import { hexToBech32 } from "@/Utils";
+// import { hexToBech32 } from "@/Utils";
 import { LoginSessionType, LoginStore } from "@/Utils/Login";
 import { ZapTarget } from "@/Utils/Zapper";
 
@@ -30,10 +30,10 @@ const AvatarSection = ({
   lnurl?: LNURL;
   readonly?: boolean;
 }) => {
-  const [showProfileQr, setShowProfileQr] = useState<boolean>(false);
+  // const [showProfileQr, setShowProfileQr] = useState<boolean>(false);
   const [modalImage, setModalImage] = useState<string>("");
   const [showLnQr, setShowLnQr] = useState<boolean>(false);
-  const profileId = useMemo(() => hexToBech32(CONFIG.profileLinkPrefix, id), [id]);
+  // const profileId = useMemo(() => hexToBech32(CONFIG.profileLinkPrefix, id), [id]);
   const navigate = useNavigate();
   const isMe = loginPubKey === id;
   const canWrite = !!loginPubKey && !readonly;
@@ -44,7 +44,7 @@ const AvatarSection = ({
 
     return (
       <>
-        <IconButton onClick={() => setShowProfileQr(true)} icon={{ name: "qr", size: 16 }} />
+        {/* <IconButton onClick={() => setShowProfileQr(true)} icon={{ name: "qr", size: 16 }} />
         {showProfileQr && (
           <Modal id="profile-qr" className="qr-modal" onClose={() => setShowProfileQr(false)}>
             <ProfileImage pubkey={id} />
@@ -53,7 +53,7 @@ const AvatarSection = ({
               <Copy text={profileId} className="py-3" />
             </div>
           </Modal>
-        )}
+        )} */}
         {isMe ? (
           <>
             <Link className="md:hidden" to="/settings">

@@ -12,7 +12,7 @@ export default defineMessages({
   Donate: { defaultMessage: "Donate", id: "2IFGap" },
   LogOut: { defaultMessage: "Log Out", id: "H0JBH6" },
   Theme: { defaultMessage: "Theme", id: "Pe0ogR" },
-  System: { defaultMessage: "System (Default)", id: "P7FD0F" },
+  // System: { defaultMessage: "System (Default)", id: "P7FD0F" },
   Light: { defaultMessage: "Light", id: "3cc4Ct" },
   Dark: { defaultMessage: "Dark", id: "tOdNiY" },
   DefaultRootTab: { defaultMessage: "Default Page", id: "MWTx65" },
