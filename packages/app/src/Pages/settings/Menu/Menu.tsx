@@ -38,12 +38,12 @@ const SettingsIndex = () => {
           message: <FormattedMessage id="itPgxd" defaultMessage="Profile" />,
           path: "profile",
         },
-        // {
-        //   icon: "key",
-        //   iconBg: "bg-amber-500",
-        //   message: <FormattedMessage id="08zn6O" defaultMessage="Export Keys" />,
-        //   path: "keys",
-        // },
+        {
+          icon: "key",
+          iconBg: "bg-amber-500",
+          message: <FormattedMessage id="08zn6O" defaultMessage="Export Keys" />,
+          path: "keys",
+        },
         // ...(CONFIG.features.nostrAddress
         //   ? [
         //       {
@@ -84,49 +84,49 @@ const SettingsIndex = () => {
         // },
       ],
     },
-    // {
-    //   title: <FormattedMessage id="hvFRBo" defaultMessage="Interaction" />,
-    //   items: [
-    //     {
-    //       icon: "relay",
-    //       iconBg: "bg-dark bg-opacity-20",
-    //       message: <FormattedMessage id="RoOyAh" defaultMessage="Relays" />,
-    //       path: "relays",
-    //     },
-    //     {
-    //       icon: "shield-tick",
-    //       iconBg: "bg-yellow-500",
-    //       message: <FormattedMessage id="wofVHy" defaultMessage="Moderation" />,
-    //       path: "moderation",
-    //     },
-    //     ...(CONFIG.features.pushNotifications
-    //       ? [
-    //           {
-    //             icon: "bell-outline",
-    //             iconBg: "bg-red-500",
-    //             message: <FormattedMessage id="NAidKb" defaultMessage="Notifications" />,
-    //             path: "notifications",
-    //           },
-    //         ]
-    //       : []),
-    //     ...(CONFIG.features.communityLeaders
-    //       ? [
-    //           {
-    //             icon: "link",
-    //             iconBg: "bg-blue-500",
-    //             message: <FormattedMessage id="hYOE+U" defaultMessage="Invite" />,
-    //             path: "invite",
-    //           },
-    //         ]
-    //       : []),
-    //     {
-    //       icon: "hard-drive",
-    //       iconBg: "bg-cyan-500",
-    //       message: <FormattedMessage id="DBiVK1" defaultMessage="Cache" />,
-    //       path: "cache",
-    //     },
-    //   ],
-    // },
+    {
+      title: <FormattedMessage id="hvFRBo" defaultMessage="Interaction" />,
+      items: [
+        {
+          icon: "relay",
+          iconBg: "bg-dark bg-opacity-20",
+          message: <FormattedMessage id="RoOyAh" defaultMessage="Relays" />,
+          path: "relays",
+        },
+        {
+          icon: "shield-tick",
+          iconBg: "bg-yellow-500",
+          message: <FormattedMessage id="wofVHy" defaultMessage="Moderation" />,
+          path: "moderation",
+        },
+        // ...(CONFIG.features.pushNotifications
+        //   ? [
+        //       {
+        //         icon: "bell-outline",
+        //         iconBg: "bg-red-500",
+        //         message: <FormattedMessage id="NAidKb" defaultMessage="Notifications" />,
+        //         path: "notifications",
+        //       },
+        //     ]
+        //   : []),
+        // ...(CONFIG.features.communityLeaders
+        //   ? [
+        //       {
+        //         icon: "link",
+        //         iconBg: "bg-blue-500",
+        //         message: <FormattedMessage id="hYOE+U" defaultMessage="Invite" />,
+        //         path: "invite",
+        //       },
+        //     ]
+        //   : []),
+        // {
+        //   icon: "hard-drive",
+        //   iconBg: "bg-cyan-500",
+        //   message: <FormattedMessage id="DBiVK1" defaultMessage="Cache" />,
+        //   path: "cache",
+        // },
+      ],
+    },
     // {
     //   title: <FormattedMessage id="HqRNN8" defaultMessage="Support" />,
     //   items: [

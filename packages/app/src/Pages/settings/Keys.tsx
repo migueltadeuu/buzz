@@ -6,10 +6,10 @@ import { FormattedMessage } from "react-intl";
 import Copy from "@/Components/Copy/Copy";
 import useLogin from "@/Hooks/useLogin";
 import { hexToBech32 } from "@/Utils";
-import { hexToMnemonic } from "@/Utils/nip6";
+// import { hexToMnemonic } from "@/Utils/nip6";
 
 export default function ExportKeys() {
-  const { publicKey, privateKeyData, generatedEntropy } = useLogin();
+  const { publicKey, privateKeyData } = useLogin(); // removed "generatedEntropy" after "privateKeyData"
   return (
     <div className="flex flex-col g12">
       <h2>
@@ -25,7 +25,7 @@ export default function ExportKeys() {
           <Copy text={hexToBech32("nsec", privateKeyData.value)} className="dashed" />
         </>
       )}
-      {generatedEntropy && (
+      {/* {generatedEntropy && (
         <>
           <h2>
             <FormattedMessage defaultMessage="Mnemonic" id="b12Goz" />
@@ -41,7 +41,7 @@ export default function ExportKeys() {
               ))}
           </div>
         </>
-      )}
+      )} */}
     </div>
   );
 }

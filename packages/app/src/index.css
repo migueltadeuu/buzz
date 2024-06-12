@@ -51,7 +51,7 @@
   --expired-invoice-gradient: linear-gradient(45deg, var(--gray-superdark) 50%, var(--gray), var(--gray-superdark));
   --sub-bg: #111;
   --btn-color: #fff;
-  --primary-bg: #ff3f15;
+  --primary-bg: #128005;
   --cashu-gradient: linear-gradient(90deg, #40b039, #adff2a);
   --pro: #ffdd65;
 }
@@ -102,7 +102,7 @@ html.light {
   --bg-secondary: #f5f5f5;
   --sub-bg: #fff;
   --btn-color: #fff;
-  --primary-bg: #ff3f15;
+  --primary-bg: #128005;
 }
 
 body {

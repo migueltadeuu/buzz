@@ -4,7 +4,7 @@ import { FormattedMessage } from "react-intl";
 
 import useLogin from "@/Hooks/useLogin";
 import { appendDedupe } from "@/Utils";
-import { SnortAppData, updateAppData } from "@/Utils/Login";
+import { updateAppData } from "@/Utils/Login"; // removed "SnortAppData" before "updateAppData"
 
 export default function ModerationSettingsPage() {
   const login = useLogin();
@@ -22,15 +22,15 @@ export default function ModerationSettingsPage() {
     setMuteWord("");
   }
 
-  const handleToggle = (setting: keyof SnortAppData) => {
-    updateAppData(login.id, ad => ({
-      item: {
-        ...ad,
-        [setting]: !appData[setting],
-      },
-      timestamp: unixNowMs(),
-    }));
-  };
+  // const handleToggle = (setting: keyof SnortAppData) => {
+  //   updateAppData(login.id, ad => ({
+  //     item: {
+  //       ...ad,
+  //       [setting]: !appData[setting],
+  //     },
+  //     timestamp: unixNowMs(),
+  //   }));
+  // };
 
   function removeMutedWord(word: string) {
     updateAppData(login.id, ad => ({
@@ -49,7 +49,7 @@ export default function ModerationSettingsPage() {
         <FormattedMessage defaultMessage="Moderation" id="wofVHy" />
       </h2>
 
-      <div className="py-4 flex flex-col gap-2">
+      {/* <div className="py-4 flex flex-col gap-2">
         <div className="flex items-center mb-2">
           <input
             type="checkbox"
@@ -62,7 +62,7 @@ export default function ModerationSettingsPage() {
             <FormattedMessage defaultMessage="Show posts that have a content warning tag" id="fQN+tq" />
           </label>
         </div>
-      </div>
+      </div> */}
 
       <h3>
         <FormattedMessage defaultMessage="Muted Words" id="AN0Z7Q" />

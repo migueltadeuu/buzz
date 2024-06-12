@@ -8,10 +8,10 @@ import SnortApi, { RelayDistance } from "@/External/SnortApi";
 import useEventPublisher from "@/Hooks/useEventPublisher";
 import useLogin from "@/Hooks/useLogin";
 import { saveRelays } from "@/Pages/settings/saveRelays";
-import { getCountry, getRelayName, sanitizeRelayUrl } from "@/Utils";
+import { getCountry, sanitizeRelayUrl } from "@/Utils"; // removed " getRelayName," after "getCountry"
 import { setRelays } from "@/Utils/Login";
-import { formatShort } from "@/Utils/Number";
 
+// import { formatShort } from "@/Utils/Number";
 import messages from "./messages";
 
 const RelaySettingsPage = () => {
@@ -79,7 +79,7 @@ const RelaySettingsPage = () => {
       {addRelay()}
       <CloseRelays />
       <h3>
-        <FormattedMessage defaultMessage="Other Connections" id="LF5kYT" />
+        {/* <FormattedMessage defaultMessage="Other Connections" id="LF5kYT" /> */}
       </h3>
       <div className="flex flex-col g8">
         {otherConnections.map(a => (
@@ -95,7 +95,7 @@ export default RelaySettingsPage;
 export function CloseRelays() {
   const [relays, setRecommendedRelays] = useState<Array<RelayDistance>>();
   const country = getCountry();
-  const [location, setLocation] = useState<{ lat: number; lon: number }>(country);
+  const [location] = useState<{ lat: number; lon: number }>(country); // removed "setLocation," after "location"
   const login = useLogin();
   const relayUrls = Object.keys(login.relays.item);
 
@@ -111,70 +111,71 @@ export function CloseRelays() {
   return (
     <>
       <h3>
-        <FormattedMessage defaultMessage="Recommended Relays" id="VL900k" />
+        {/* <FormattedMessage defaultMessage="Recommended Relays" id="VL900k" /> */}
       </h3>
       {"geolocation" in navigator && (
-        <AsyncButton
-          onClick={async () => {
-            try {
-              const pos = await new Promise<GeolocationPosition>((resolve, reject) => {
-                navigator.geolocation.getCurrentPosition(resolve, reject);
-              });
-              setLocation({
-                lat: pos.coords.latitude,
-                lon: pos.coords.longitude,
-              });
-            } catch (e) {
-              console.error(e);
-            }
-          }}>
-          <FormattedMessage defaultMessage="Use Exact Location" id="0HFX0T" />
-        </AsyncButton>
+        <div></div>
+        // <AsyncButton
+        //   onClick={async () => {
+        //     try {
+        //       const pos = await new Promise<GeolocationPosition>((resolve, reject) => {
+        //         navigator.geolocation.getCurrentPosition(resolve, reject);
+        //       });
+        //       setLocation({
+        //         lat: pos.coords.latitude,
+        //         lon: pos.coords.longitude,
+        //       });
+        //     } catch (e) {
+        //       console.error(e);
+        //     }
+        //   }}>
+        //   {/* <FormattedMessage defaultMessage="Use Exact Location" id="0HFX0T" /> */}
+        // </AsyncButton>
       )}
       {relays
         ?.filter(a => !relayUrls.includes(unwrap(sanitizeRelayUrl(a.url))) && !a.is_paid)
         .sort((a, b) => (a.distance > b.distance ? 1 : -1))
         .map(a => (
-          <div key={a.url} className="bg-dark p br flex flex-col g8">
-            <div className="flex justify-between items-center">
-              <div className="bold">{getRelayName(a.url)}</div>
-              <AsyncButton
-                onClick={async () => {
-                  setRelays(
-                    login,
-                    {
-                      ...login.relays.item,
-                      [a.url]: { read: true, write: true },
-                    },
-                    unixNowMs(),
-                  );
-                }}>
-                <FormattedMessage defaultMessage="Add" id="2/2yg+" />
-              </AsyncButton>
-            </div>
-            <div className="flex flex-col g8">
-              <span>{a.description}</span>
-              <small>
-                <FormattedMessage
-                  defaultMessage="{n} km - {location}"
-                  id="jTrbGf"
-                  values={{
-                    n: (a.distance / 1000).toFixed(0),
-                    location: a.city ? `${a.city}, ${a.country}` : a.country,
-                  }}
-                />
-              </small>
-              <small>
-                <FormattedMessage
-                  defaultMessage="{n} users"
-                  id="1H4Keq"
-                  values={{
-                    n: formatShort(a.users),
-                  }}
-                />
-              </small>
-            </div>
-          </div>
+          <div key={a.url}/>
+          //   <div className="flex justify-between items-center">
+          //     <div className="bold">{getRelayName(a.url)}</div>
+          //     <AsyncButton
+          //       onClick={async () => {
+          //         setRelays(
+          //           login,
+          //           {
+          //             ...login.relays.item,
+          //             [a.url]: { read: true, write: true },
+          //           },
+          //           unixNowMs(),
+          //         );
+          //       }}>
+          //       <FormattedMessage defaultMessage="Add" id="2/2yg+" />
+          //     </AsyncButton>
+          //   </div>
+          //   <div className="flex flex-col g8">
+          //     <span>{a.description}</span>
+          //     <small>
+          //       <FormattedMessage
+          //         defaultMessage="{n} km - {location}"
+          //         id="jTrbGf"
+          //         values={{
+          //           n: (a.distance / 1000).toFixed(0),
+          //           location: a.city ? `${a.city}, ${a.country}` : a.country,
+          //         }}
+          //       />
+          //     </small>
+          //     <small>
+          //       <FormattedMessage
+          //         defaultMessage="{n} users"
+          //         id="1H4Keq"
+          //         values={{
+          //           n: formatShort(a.users),
+          //         }}
+          //       />
+          //     </small>
+          //   </div>
+          // </div>
         ))}
     </>
   );
