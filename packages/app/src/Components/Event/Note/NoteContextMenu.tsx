@@ -18,7 +18,7 @@ import { ReBroadcaster } from "../../ReBroadcaster";
 export function NoteContextMenu({ ev, ...props }: NoteContextMenuProps) {
   // const { formatMessage } = useIntl();
   const login = useLogin();
-  const { mute, block } = useModeration();
+  const { mute } = useModeration(); // removed "block" after "mute"
   // const { publisher, system } = useEventPublisher();
   const [showBroadcast, setShowBroadcast] = useState(false);
   const lang = window.navigator.language;
@@ -167,16 +167,16 @@ export function NoteContextMenu({ ev, ...props }: NoteContextMenuProps) {
           <Icon name="relay" />
           <FormattedMessage defaultMessage="Broadcast Event" id="Gxcr08" />
         </MenuItem> */}
-        {ev.pubkey !== login.publicKey && !login.readonly && (
+        {/* {ev.pubkey !== login.publicKey && !login.readonly && (
           <MenuItem onClick={() => block(ev.pubkey)}>
             <Icon name="block" />
             <FormattedMessage {...messages.Block} />
           </MenuItem>
-        )}
-        <MenuItem onClick={() => translate()}>
+        )} */}
+        {/* <MenuItem onClick={() => translate()}>
           <Icon name="translate" />
           <FormattedMessage {...messages.TranslateTo} values={{ lang: langNames.of(lang.split("-")[0]) }} />
-        </MenuItem>
+        </MenuItem> */}
         {/* <MenuItem onClick={() => copyEvent()}>
           <Icon name="json" />
           <FormattedMessage {...messages.CopyJSON} />
