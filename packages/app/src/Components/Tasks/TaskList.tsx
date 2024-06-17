@@ -5,7 +5,7 @@ import { useUserProfile } from "@snort/system-react";
 import { Fragment, useSyncExternalStore } from "react";
 
 import CloseButton from "@/Components/Button/CloseButton";
-import Icon from "@/Components/Icons/Icon";
+// import Icon from "@/Components/Icons/Icon";
 import { UITask } from "@/Components/Tasks/index";
 import useLogin from "@/Hooks/useLogin";
 
@@ -66,7 +66,7 @@ export const TaskList = () => {
             return (
               <div key={a.id} className="card">
                 <div className="header">
-                  <Icon name="lightbulb" />
+                  {/* <Icon name="lightbulb" /> */}
                   <CloseButton onClick={() => muteTask(a)} />
                 </div>
                 {a.render()}

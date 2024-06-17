@@ -1,5 +1,5 @@
-import { FormattedMessage } from "react-intl";
-import { Link } from "react-router-dom";
+// import { FormattedMessage } from "react-intl";
+// import { Link } from "react-router-dom";
 
 import { BaseUITask } from "@/Components/Tasks/index";
 
@@ -14,17 +14,17 @@ export class DonateTask extends BaseUITask {
     return (
       <>
         <p>
-          <FormattedMessage
+          {/* <FormattedMessage
             defaultMessage="Thanks for using {site}, please consider donating if you can."
             id="fBlba3"
             values={{ site: CONFIG.appNameCapitalized }}
-          />
+          /> */}
         </p>
-        <Link to="/donate">
+        {/* <Link to="/donate">
           <button>
             <FormattedMessage defaultMessage="Donate" id="2IFGap" />
           </button>
-        </Link>
+        </Link> */}
       </>
     );
   }

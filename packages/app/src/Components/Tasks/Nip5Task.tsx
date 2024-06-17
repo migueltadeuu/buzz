@@ -1,7 +1,7 @@
 import { CachedMetadata } from "@snort/system";
-import { FormattedMessage } from "react-intl";
-import { Link } from "react-router-dom";
 
+// import { FormattedMessage } from "react-intl";
+// import { Link } from "react-router-dom";
 import { BaseUITask } from "@/Components/Tasks/index";
 
 export class Nip5Task extends BaseUITask {
@@ -14,7 +14,7 @@ export class Nip5Task extends BaseUITask {
   render(): JSX.Element {
     return (
       <p>
-        <FormattedMessage
+        {/* <FormattedMessage
           defaultMessage="Hey, it looks like you dont have a Nostr Address yet, you should get one! Check out {link}"
           id="ojzbwv"
           values={{
@@ -24,7 +24,7 @@ export class Nip5Task extends BaseUITask {
               </Link>
             ),
           }}
-        />
+        /> */}
       </p>
     );
   }

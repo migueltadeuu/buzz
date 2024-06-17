@@ -4,7 +4,7 @@
   "appTitle": "Buzz",
   "hostname": "snort.social",
   "nip05Domain": "snort.social",
-  "icon": "/nostrich_512.png",
+  "icon": "/buzz_512.png",
   "navLogo": null,
   "publicDir": "public/snort",
   "httpCache": "",

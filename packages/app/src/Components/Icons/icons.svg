@@ -119,9 +119,9 @@
     <symbol id="bitcoin" viewBox="0 0 16 22" fill="none">
       <path d="M5.5 1V3M5.5 19V21M9.5 1V3M9.5 19V21M3.5 3H10C12.2091 3 14 4.79086 14 7C14 9.20914 12.2091 11 10 11H3.5H11C13.2091 11 15 12.7909 15 15C15 17.2091 13.2091 19 11 19H3.5M3.5 3H1.5M3.5 3V19M3.5 19H1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
     </symbol>
-    <symbol id="lightbulb" viewBox="0 0 22 22" fill="none">
+    <!-- <symbol id="lightbulb" viewBox="0 0 22 22" fill="none">
       <path d="M9 16.6586V19C9 20.1046 9.89543 21 11 21C12.1046 21 13 20.1046 13 19V16.6586M11 1V2M2 11H1M4.5 4.5L3.8999 3.8999M17.5 4.5L18.1002 3.8999M21 11H20M17 11C17 14.3137 14.3137 17 11 17C7.68629 17 5 14.3137 5 11C5 7.68629 7.68629 5 11 5C14.3137 5 17 7.68629 17 11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-    </symbol>
+    </symbol> -->
     <symbol id="openeye" viewBox="0 0 24 24" fill="none">
       <path d="M1.42012 8.71318C1.28394 8.49754 1.21584 8.38972 1.17772 8.22342C1.14909 8.0985 1.14909 7.9015 1.17772 7.77658C1.21584 7.61028 1.28394 7.50246 1.42012 7.28682C2.54553 5.50484 5.8954 1 11.0004 1C16.1054 1 19.4553 5.50484 20.5807 7.28682C20.7169 7.50246 20.785 7.61028 20.8231 7.77658C20.8517 7.9015 20.8517 8.0985 20.8231 8.22342C20.785 8.38972 20.7169 8.49754 20.5807 8.71318C19.4553 10.4952 16.1054 15 11.0004 15C5.8954 15 2.54553 10.4952 1.42012 8.71318Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
       <path d="M11.0004 11C12.6573 11 14.0004 9.65685 14.0004 8C14.0004 6.34315 12.6573 5 11.0004 5C9.34355 5 8.0004 6.34315 8.0004 8C8.0004 9.65685 9.34355 11 11.0004 11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />

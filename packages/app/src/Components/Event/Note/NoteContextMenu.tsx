@@ -1,13 +1,13 @@
 import { NostrLink } from "@snort/system"; // before deleting stuff "import { HexKey, NostrLink, NostrPrefix } from "@snort/system";"
 import { Menu, MenuItem } from "@szhsin/react-menu";
 import { useEffect, useState } from "react";
-import { FormattedMessage } from "react-intl"; // removed ", useIntl" after "FormattedMessage"
+import { FormattedMessage, useIntl } from "react-intl"; // removed ", useIntl" after "FormattedMessage"
 
 import { NoteContextMenuProps, NoteTranslation } from "@/Components/Event/Note/types";
 import Icon from "@/Components/Icons/Icon";
 import messages from "@/Components/messages";
 import SnortApi from "@/External/SnortApi";
-// import useEventPublisher from "@/Hooks/useEventPublisher";
+import useEventPublisher from "@/Hooks/useEventPublisher";
 import useLogin from "@/Hooks/useLogin";
 import useModeration from "@/Hooks/useModeration";
 // import { setBookmarked, setPinned } from "@/Utils/Login";
@@ -16,23 +16,23 @@ import { getCurrentSubscription, SubscriptionType } from "@/Utils/Subscription";
 import { ReBroadcaster } from "../../ReBroadcaster";
 
 export function NoteContextMenu({ ev, ...props }: NoteContextMenuProps) {
-  // const { formatMessage } = useIntl();
+  const { formatMessage } = useIntl();
   const login = useLogin();
   const { mute } = useModeration(); // removed "block" after "mute"
-  // const { publisher, system } = useEventPublisher();
+  const { publisher, system } = useEventPublisher();
   const [showBroadcast, setShowBroadcast] = useState(false);
   const lang = window.navigator.language;
   const langNames = new Intl.DisplayNames([...window.navigator.languages], {
     type: "language",
   });
-  // const isMine = ev.pubkey === login.publicKey;
+  const isMine = ev.pubkey === login.publicKey;
 
-  // async function deleteEvent() {
-  //   if (window.confirm(formatMessage(messages.ConfirmDeletion, { id: ev.id.substring(0, 8) })) && publisher) {
-  //     const evDelete = await publisher.delete(ev.id);
-  //     system.BroadcastEvent(evDelete);
-  //   }
-  // }
+  async function deleteEvent() {
+    if (window.confirm(formatMessage(messages.ConfirmDeletion, { id: ev.id.substring(0, 8) })) && publisher) {
+      const evDelete = await publisher.delete(ev.id);
+      system.BroadcastEvent(evDelete);
+    }
+  }
 
   async function share() {
     const link = NostrLink.fromEvent(ev).encode(CONFIG.eventLinkPrefix);
@@ -180,13 +180,13 @@ export function NoteContextMenu({ ev, ...props }: NoteContextMenuProps) {
         {/* <MenuItem onClick={() => copyEvent()}>
           <Icon name="json" />
           <FormattedMessage {...messages.CopyJSON} />
-        </MenuItem>
+        </MenuItem> */}
         {isMine && !login.readonly && (
           <MenuItem onClick={() => deleteEvent()}>
             <Icon name="trash" className="red" />
             <FormattedMessage {...messages.Delete} />
           </MenuItem>
-        )} */}
+        )} 
       </>
     );
   }
